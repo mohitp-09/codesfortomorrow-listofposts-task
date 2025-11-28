@@ -28,8 +28,8 @@ function App() {
                 {visiblePosts.map((post) => (
                     <div className='card' key={post.id}>
                         <button className='close-btn' onClick={()=> handleDelete(post.id)}>X</button>
-                        <h3 className='title'>{post.title}</h3>
-                        <p className='desc'>{post.body}</p>
+                        <h3 className='title'>{post.title.length > 25 ? post.title.slice(0, 25) + "..." : post.title}</h3>
+                        <p className='desc'>{post.body.length > 80 ? post.body.slice(0, 80) + "..." : post.body}</p>
                         <small className='date'>MOn, 21 Dec 2020 14:57 GMT</small>
                         <img src="https://placehold.co/400" alt="post" className='card-image'/>
                     </div>
